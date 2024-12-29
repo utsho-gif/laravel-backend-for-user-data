@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['static.token']], function () {
-    Route::get('/users', [UserProfileController::class, 'index']);
-    Route::post('/users', [UserProfileController::class, 'store']);
-});
+Route::group(['middleware' => ['static.token']], function () {});
+Route::get('/users', [UserProfileController::class, 'index']);
+Route::get('/users/{id}', [UserProfileController::class, 'show']);
+Route::post('/users', [UserProfileController::class, 'store']);

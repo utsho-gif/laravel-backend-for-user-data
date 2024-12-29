@@ -67,7 +67,6 @@ class Kernel extends HttpKernel
     ];
 
     protected $routeMiddleware = [
-        // other middlewares
         'static.token' => \App\Http\Middleware\StaticTokenMiddleware::class,
     ];
 }

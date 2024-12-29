@@ -13,6 +13,16 @@ class UserProfileController extends Controller
         return response()->json($users);
     }
 
+    public function show($id)
+    {
+        $userProfile = UserProfile::find($id);
+        // dd($userProfile);
+        if (!$userProfile) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        return response()->json($userProfile);
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
